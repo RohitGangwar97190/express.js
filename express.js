@@ -1,7 +1,8 @@
 const express =require('express');
 const app =express();
-app.get('',(req,res)=>{
-    res.send('welcome,this is a home page');
+app.get('',(req,resp)=>{
+    console.log("data sent by the users =>>",req.query.name)
+    resp.send("welcome,"+req.query.name);
 });
 app.get('/about',(req,res)=>{
     res.send('welcome,this si about page');
